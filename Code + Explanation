@@ -1,0 +1,14 @@
+In this problem, We are solving this using recusion. after recursion call we are assuming that ki hamari queue reverse ho gayi hai
+
+#include<queue>
+void reverseQueue(queue<int> &input) {
+	/*We are solving this question via recursion*/
+    if(input.empty()==true){ //Base Case if the queue is empty then return from the function
+        return;
+    }
+    
+    int a = input.front(); //Making temporary variable to store first element of the exit point of the queue
+    input.pop(); /*Deleting first element of the queue*/
+    reverseQueue(input); //Recursion call & Assume ki ye reverse ho gayi hai.
+    input.push(a); //Now insert the first element to the last point
+}
